@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" type="text/css" href="./styles/navbar.css">
+</head>
+ <body>
+    <div id="main_navbar"></div>
+    <div id="navbar">
+        <p>Home</p>
+        <p> / Massage Oil</p>
+    </div>
+    <div id="page_info">
+        <p id="big_name">Massage Oil</p>
+        <p>Revitalise your mind and body with our premium range of massage oils. Choose your favourite now! </p>
+    </div>
+    <div id="append_html">
+   
+   </div>
+   <div id="main_footer"></div>
+</body>
+</html>
+<script type="text/javascript" src="./scripts/navbar.js"></script>
+<script src="https://kit.fontawesome.com/b4ce217570.js" crossorigin="anonymous"></script>
+<script type="module">
+
+import {navbar, footer} from "/components/index.js"
+	
+	 document.querySelector("#main_navbar").innerHTML = navbar();
+
+  let footer_div = document.querySelector("#main_footer");
+     footer_div.innerHTML = footer();
+   
+  let hair_shampoo_data =  [{
+        img:"https://cdn.shopify.com/s/files/1/1375/4957/products/Thaioil1_1280x.jpg?v=1632905961",
+        title:"Thai Body Massage Oil for Reviving and Refreshing -Infused with Blend of 6 Oils with Jasmine Absolute, Kaffir Lime and Lemongrass Essential - 200 ml",
+       info:"WOW Skin Science Charcoal 2 In 1 Shampoo & Body Wash has the clarifying goodness of activated bamboo charcoal that traps, binds and washes away dirt, grime and impurities from skin and hair. It also has Argan Oil and Pro-Vitamin B5 to nourish and protect your skin and hair. Its smoky-earthy smell feels really serene. You Can Buy Our Charcoal 2-In-1 Shampoo + Body Wash At Best Price From : Amazon, Flipkart, Nykaa, Purplle Formulated to deliver superlative bathing and shampooing experience Leaves skin feeling smooth and soft. Scalp feels clean and smooth; hair feels softer and silkier. Rich moisturizing formulation brings a glow to skin and gloss to hair. Vitamin E rich Argan Oil and antioxidant powered Pro Vitamin B5 give skin, scalp and hair ample nourishment. Has serene fragrance with smoky-earthy notes that soothe the mind. Key Ingredients Activated Charcoal (Bamboo) - high grade and fine activated charcoal with high adsorbance power to trap, lift and wash away impurities and pollutants. Argan Oil - Excellent skin healer, fades age spots; hydrates and conditions skin, scalp and hair. Pro Vitamin B5 - Boosts skin’s moisture retention ability for softer and smoother skin. How to use WOW Skin Science Charcoal 2 In 1 Shampoo & Body Wash FOR BATHING: Wet body. Pour a dollop of the product on wet loofah, washcloth or sponge. Lather all over savoring the amazing smell. Rinse off thoroughly and pat your skin dry. FOR SHAMPOO:Wet hair and scalp. Massage in a small amount of the product. Rub gently with fingertips to generate lather. Wash off well with plain water. Explore the entire range of Shampoo available on BuyWOW. You can browse through the complete list of Activated Charcoal Products. Shop Other WOW Skin Science Shampoo: Apple Cider Vinegar Shampoo | Onion Hair Shampoo Shop Activated Charcoal Range: Activated Charcoal Face Mask | Charcoal Foaming Face Wash [des] A lightweight, non-greasy hair oil for dry, brittle hair and weak roots. Helps to protect strands from damage and restore healthy shine. Delivers potent nutrients from the actives to the scalp and roots. Supports in boosting circulation to the scalp and stimulate the roots. [/des]",
+        Dprice:299,
+        price:""
+    }]
+    
+    
+ import append_html from "./components/append.js"
+ 
+     
+ document.querySelector("#append_html").innerHTML=append_html();
+
+ 
+ import {map,grid,detailed,filter} from "./scripts/main.js";
+  
+  
+// map function for strt page
+
+ let parent=document.querySelector("#main");
+  
+ let sec_parent= document.querySelector("#detailed")
+  
+ map(hair_shampoo_data,parent,sec_parent)
+
+   
+//   for grid view
+  
+ let img1=  document.querySelector("#creat_grid")
+ let img2=  document.querySelector("#creat_detailed");
+   
+ document.querySelector("#creat_grid").addEventListener("click",()=>{
+          grid(hair_shampoo_data,parent,sec_parent,img1,img2)
+    })
+
+     
+//  for detailed view
+
+document.querySelector("#creat_detailed").addEventListener("click",()=>{
+    detailed(hair_shampoo_data,parent,sec_parent,img1,img2)
+})
+ 
+
+// sort and filter 
+
+let selected=document.querySelector("#select_option").value;
+document.querySelector("#select_option").addEventListener("change",()=>{
+ let selected=document.querySelector("#select_option").value
+ filter(selected,hair_shampoo_data,parent,sec_parent,img1,img2)
+})
+
+</script>

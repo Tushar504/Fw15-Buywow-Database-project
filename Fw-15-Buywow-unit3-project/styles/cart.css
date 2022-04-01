@@ -1,0 +1,133 @@
+#contain {
+    width: 88%;
+
+    margin: auto;
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 45px;
+    justify-content: space-between;
+    margin-bottom: 59px;
+    height: 60px;
+}
+
+#box {
+    width: 88%;
+    
+    margin: auto;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 130px;
+}
+
+#title {
+    
+    width: 280px;
+    margin: 20px;
+    margin-left: 70px;
+}
+
+#rupee {
+    
+    padding: 40px;
+    margin-left: 80px;
+
+}
+
+#add_minus {
+    border: 1px solid rgb(206, 198, 190);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 50px;
+    margin: 40px;
+    margin-left: 100px;
+    width: 200px;
+    text-align: center;
+
+}
+
+#con {
+    border: 1px;
+    color: rgb(7, 7, 7);
+    background-color: rgb(208, 224, 219);
+}
+
+#total {
+    margin: 50px;
+}
+
+#dust {
+    width: 17px;
+    height: 17px;
+    margin: 50px;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#Checkoout {
+    font-size: large;
+    border: 0px;
+    width: 200px;
+    background-color: black;
+    color: aliceblue;
+}
+
+hr {
+    width: 88%;
+    margin-bottom: 70px;
+    border: 1 solid rgb(195, 201, 202);
+}
+
+#last {
+    display: flex;
+}
+
+#contain2 {
+    
+    width: 88%;
+    margin: auto;
+    margin-top: 90px;
+    display: flex;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#text {
+    margin-left: 570px;
+    
+    margin-right: 50px;
+}
+
+textarea {
+    width: 350px;
+    height: 170px;
+}
+
+#goback {
+    font-size: small;
+}
+
+#grand_total {
+    width: 200px;
+    
+    font-size: large;
+    margin-left: 23px;
+    ;
+}
+
+#Checkout {
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 10px;
+    font-size: large;
+    background-color: black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}

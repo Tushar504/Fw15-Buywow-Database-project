@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/checkout.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="./styles/navbar.css">
+</head>
+ <body>
+    <div id="main_navbar"></div>
+    <div class="container">
+        <div class="leftdiv"> 
+            <div class="leftinner">
+                <img src="https://cdn.shopify.com/s/files/1/1375/4957/files/WOW_logo-02-02-01_5f70367a-c63c-479d-9ebe-21f1eebf6189.png?39498" alt="">
+                <p>Cart  > Information > Shipping > Payment</p>
+                <div ><div>Contact Information</div>
+                    <div class="contactinfo"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQpoqky3sHWOFpGYT8Ph487qyqwu-_YlWdZds8WwP-oq1biBl5h" alt="">
+                        <div><p>name(name@gmail.com)</p>
+                            <a href="">Log out</a>
+                        </div>
+                    </div>
+                </div >
+                <div class="form1">
+                    <form action="">
+                <input type="text" placeholder="Email"><br>
+                <input type="checkbox" id="check" name="check">
+                <label for="check">Email me with news and offers</label>
+
+                <h2>Shipping Address</h2>
+
+                <select id="country" name="country">
+                    <option value="india">India</option>
+                  </select>
+
+                  <div class="inputgroup">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                  </div>
+
+                  <input type="text" placeholder="Address">
+                  <input type="text" placeholder="Apartment,suite,etc, (optional)">
+
+                  <div class="inputgroup">
+                    <input type="text" placeholder="City">
+                    <select id="state" name="state">
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Orissa"> Orissa</option>
+                        <option value="Punjab">Punjab</option>
+                      </select>
+                    <input type="text" placeholder="Pincode">
+                  </div>
+                  
+                  <input type="checkbox" id="check" name="check">
+                <label for="check">Save this information for the next time</label>
+
+                <div class="return">
+                    <a href="">< Return to cart</a>
+                    <button class="continue">Continue Shopping</button>
+                </div>
+            </form>
+            <br><br>
+            <hr>
+                <p>Refund Policy&nbsp;&nbsp;&nbsp; Privacy Policy &nbsp;&nbsp;&nbsp;  Terms of Service</p>
+            </div>
+            </div>
+            
+        </div>
+        <div class="rightdiv">
+            <div class="rightinner">
+                <hr>
+                <div class="coupon">
+                    <input type="text,number" id = "inputpromo" placeholder="Gift card or discount Code">
+                    <button onclick="applypromo()" >Apply</button>
+
+                </div>
+                <hr>
+                <div class="subtot">
+                    <p>Subtotal</p>
+                    <p id = "totalprice"></p>
+                </div>
+                <div class="subtot">
+                    <p>Shipping</p>
+                    <p>Calculated at next step</p>
+                </div>
+                <hr>
+                <div class="subtot">
+                    <p>Total</p>
+                    <p id = "totalprice2"></p>
+                </div>
+
+                <button class="cashback"  onclick="send_home()">You will get Rs.33 cashback after delivery.  T&C</button>
+            </div>
+        </div>
+    </div>
+    <div id="main_footer"></div>
+</body>
+</html>
+<script type="text/javascript" src="./scripts/navbar.js"></script>
+<script src="https://kit.fontawesome.com/b4ce217570.js" crossorigin="anonymous"></script>
+<script type="module">
+
+import {navbar, footer} from "/components/index.js"
+    
+     document.querySelector("#main_navbar").innerHTML = navbar();
+
+  let footer_div = document.querySelector("#main_footer");
+     footer_div.innerHTML = footer();
+   
+
+</script>
+<script type="text/javascript"> 
+
+let total = JSON.parse(localStorage.getItem("total"));
+let price_container = document.getElementById("totalprice")
+price_container.innerHTML = "INR ₹"+total+".00"
+let price_container2 = document.getElementById("totalprice2")
+price_container2.innerHTML = "INR ₹"+total+".00"
+
+
+let applypromo = () =>{
+    let price = document.getElementById("totalprice")
+    let price2 = document.getElementById("totalprice2")
+    let promo = document.getElementById("inputpromo")
+    if(promo.value=="masai30"){
+        let original = total;
+        total = Math.floor(total/100*30);
+        original = original-total;
+
+        price.innerHTML = "INR ₹"+original+".00";
+        price2.innerHTML = "INR ₹"+original+".00";
+
+    }
+}
+
+function send_home(){
+  alert("Order placed Successfully");
+  window.location.href="home.html"
+}</script>
+

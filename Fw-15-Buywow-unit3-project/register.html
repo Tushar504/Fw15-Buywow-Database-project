@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Document</title>
+     <link rel="stylesheet" type="text/css" href="styles/navbar.css">
+   </head>
+ 
+   <style>
+     #container {
+       display: flex;
+    
+       width:40%;
+       margin: auto;
+       text-align: center;
+       margin-top: 60px;;
+     }
+ 
+     form {
+       width: 10%;
+     }
+ 
+    
+     #register-form{
+         
+         width:100%;
+        
+        }
+        .sigin_p{
+          
+            color:rgb(92, 90, 90);
+            width:100px;
+            text-align: left;
+            width: 250px;
+        }
+        .sigin_input{
+            width:610px;
+            padding: 13px;
+            background-color: rgb(208, 217, 218);
+            border:0ch;
+             margin-top: 5%;
+        }
+        .sigin_btn{
+            font-size: large;
+            margin-top:20px;
+            width:200px;
+            padding:9px;
+            color: white;
+            border:0px;
+            background-color: black;
+           margin-right: 450px;
+
+        }
+       
+        .sigin_a{
+          color:#302e2e;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          width: 250px;
+            }
+   </style>
+   <body>
+    <div id="main_navbar"></div>
+     <div id="container">
+       <div id="register-form">
+         <h1>Create An Account</h1>
+ 
+         <form>
+           <p class="sigin_p">First Name
+          <input class="sigin_input" type="text" id="name" placeholder="" /></p>
+          <p class="sigin_p">Last Name
+          <input class="sigin_input" type="text" id="description" placeholder="" /></p>
+          <p class="sigin_p">Email Address
+          <input class="sigin_input" type="email" id="email" placeholder="" /></p>
+         
+          <p class="sigin_p">Password
+          <input class="sigin_input" type="password" id="password" placeholder="" /></p>
+         
+          
+        </form>
+ <button class="sigin_btn" onclick = "Register()">Create An Account</button>
+        <p class="sigin_p"><a class="sigin_a" href="sigin.html">Already a member?Sign in here</a></p>
+       </div>
+                                                 
+     </div>
+  
+     
+  </div>
+
+  <div id="main_footer"></div>
+</body>
+</html>
+<script>
+
+
+let Register = async () => {
+
+try {
+  let register_data = {
+
+    first_name:document.getElementById("name").value,
+    last_name:document.getElementById("description").value,
+    email:document.getElementById("email").value,
+    password:document.getElementById("password").value,
+        
+        
+      
+
+
+ }
+
+  register_data = JSON.stringify(register_data);
+
+    let res = await fetch("http://localhost:5000/register", {
+
+        method:'POST',
+        body: register_data,
+
+        headers : {
+            "Content-Type": "application/json",
+        },
+    });
+    let data = await res.json();
+  
+    
+      go(data);
+    
+} catch (error) {
+    console.log("error:", error);
+    
+}
+}
+
+let go = (data) =>{
+  if(data.message){
+    alert(data.message)
+  }
+  else if(data.errors){
+    alert(data.errors[0].msg)
+  }
+  else{
+    alert("Registration successfull")
+   window.location.href = "sigin.html"
+  }
+}
+
+
+
+
+
+
+ </script>
+<script type="text/javascript" src="scripts/navbar.js"></script>
+<script src="https://kit.fontawesome.com/b4ce217570.js" crossorigin="anonymous"></script>
+ <script type="module">
+   
+
+  import {navbar, footer} from "/components/index.js"
+  
+  let navbar_div = document.querySelector("#main_navbar");
+   navbar_div.innerHTML = navbar();
+
+   let footer_div = document.querySelector("#main_footer");
+   footer_div.innerHTML = footer();
+ </script>

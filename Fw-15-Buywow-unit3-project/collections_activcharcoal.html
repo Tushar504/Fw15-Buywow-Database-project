@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" type="text/css" href="./styles/navbar.css">
+</head>
+ <body>
+    <div id="main_navbar"></div>
+    <div id="navbar">
+        <p>Home</p>
+        <p> / Activated Charcoal</p>
+    </div>
+    <div id="page_info">
+        <p id="big_name">Activated Charcoal</p>
+        <p>Known to deep cleanse the skin and effectively remove grime and impurities, activated charcoal is common charcoal exposed to heat, turning it into an black odorless powder. A popular ingredient and choice in skin care, activated charcoal is a great choice to remove skin impurity, reduce acne and control oiliness. Shop the charcoal range today!  </p>
+    </div>
+    <div id="append_html">
+   
+   </div>
+   <div id="main_footer"></div>
+</body>
+</html>
+<script type="text/javascript" src="./scripts/navbar.js"></script>
+<script src="https://kit.fontawesome.com/b4ce217570.js" crossorigin="anonymous"></script>
+<script type="module">
+
+import {navbar, footer} from "/components/index.js"
+	
+	 document.querySelector("#main_navbar").innerHTML = navbar();
+
+  let footer_div = document.querySelector("#main_footer");
+     footer_div.innerHTML = footer();
+  
+  
+     let  hair_shampoo_data=[
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/Charcoal-FW-150-1_1280x.jpg?v=1639421687",
+        title:"Charcoal Foaming Face Wash with Built-In Face Brush for Deep Cleansing - 100 ml + 50 ml = 150 ml",
+        info:"Get rid of pollutants on skin and revive your dull, aging skin with WOW Skin Science Activated Charcoal Foaming Face Wash. It comes with a built-in face brush with soft silicone bristles to help exfoliate dirt from your skin and clear out grime from the pores. Its natural actives gently wash away skin impurities giving your skin a chance to repair itself and restore natural radiance. Activated charcoal helps trap and draw out pollutants, dirt and impurities from the skin. Tea tree essential oil helps to protect skin from acne causing germs.",
+        Dprice:379,
+        price:399
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/peeloff_1_1280x.jpg?v=1643121694",
+        title:"Activated Charcoal Peel Off Mask - 100 ml",
+        info:"Charcoal peel off detoxifies the skin by eliminating blackheads and trapping & removing impurities even from the insides of the pores. It helps to refine the pore size, fade blemishes, and balances the oil production in skin; paving way to complete skin rejuvenation.",
+        Dprice:379,
+        price:399
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/charcoal-face-wash_1280x.jpg?v=1639475935",
+        title:"Activated Charcoal Face Wash infused with Activated Charcoal Beads No Parabens & Sulphate - 100 ml",
+        info:"There are pollutants in industrial smoke, exhaust fumes and smog which expose our skin to toxin loads everyday leaving it dull, dry, sensitive, itchy and wrinkled. Charcoal face wash helps to removing these toxins by drawing out and trapping these impurities, releasing the clogged pores to breathe life into your skin again. It also works as natural exfoliator to remove dead skin cells, with antimicrobial properties that help prevent skin infections. It gently hydrates and refreshes the skin using natural ingredients like coconut oil, orange peel oil and aloe vera gel extracts to provide nutrients that balance the skin.",
+        Dprice:249,
+        price:249
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/ActivatedCharcoalFaceMask_2_1280x.jpg?v=1632723552",
+        title:"Activated Charcoal Face Mask with PM 2.5 Anti-Pollution Shield No Parabens & Mineral Oil Wash Off Face Mask - 200 ml",
+        info:"WOW Skin Science Activated Charcoal Face Mask is an advanced and premium antipollution facemask enriched with Activated Charcoal Powder, Liquorice Extract & Alteromonas Ferment Extract from French Polynesian Sea Waters. It helps gently and efficiently remove pollution particles, impurities, dust and dead cells from the skin.",
+        Dprice:499,
+        price:499
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/charcoal-face-scrub_1280x.jpg?v=1640165154",
+        title:"Activated Charcoal Face Scrub - No Parabens & Mineral Oil - 100 ml",
+        info:"Charcoal face scrub may Be black, but It will brighten your skin! Get the face scrub and exfoliate the skin of your entire body and face at home! Don’t let that dark color fool you! After your massage your face and body with the charcoal scrub, your skin will be brighter than ever! It is used as a skin lightening product, so after regular use, your skin",
+        Dprice:375,
+        price:375
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/Untitled-1_1280x.jpg?v=1602147351",
+        title:"Activated Charcoal Face Wash Gel with Built-In Face Brush for Removing Impurities - No Parabens, Sulphate, Silicones & Color - Tube, 100 ml",
+        info:"Get rid of pollutants on skin and revive your dull, aging skin with WOW Skin Science Activated Charcoal Face Wash. The tube comes with an attached face brush with soft silicone bristles to help exfoliate dirt from your skin and clear out grime from the pores. Its natural actives gently wash away skin impurities giving your skin a chance to repair itself and restore",
+        Dprice:399,
+        price:399
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/charcoal-FW-d-shape-1_1280x.jpg?v=1635230334",
+        title:"Activated Charcoal Face Wash - with Activated Charcoal & Tea Tree Oil Beads - Removes Pollutants & Dirt - No Parabens, Sulphate, Silicones & Color - 200 ml",
+        info:"WOW Skin Science Activated Charcoal Face Wash is a premium antipollution, antitoxin & anti-dirt face wash with activated charcoal beads to trap pollutants, toxins, dirt & impurities, and tea tree essential oil beads to disinfect, heal & soothe the skin. Its formula being free of harmful parabens and sulphates works wonders on all skin types. Works wonders for all skin types. With every wash, your skin may feel cleaner and fresher than ever before.",
+        Dprice:399,
+        price:399
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/charcoalfacewashformen1_1280x.jpg?v=1632294360",
+        title:"Charcoal 2-In-1 Shampoo + Body Wash - No Parabens, Sulphate, Silicones & Color - 250 ml",
+        info:"WOW Skin Science Charcoal 2 In 1 Shampoo & Body Wash has the clarifying goodness of activated bamboo charcoal that traps, binds and washes away dirt, grime and impurities from skin and hair. It also has Argan Oil and Pro-Vitamin B5 to nourish and protect your skin and hair. Its smoky-earthy smell feels really serene.",
+        Dprice:299,
+        price:299
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/Charcoal-shampoo-300-1_1280x.jpg?v=1632725916",
+        title:"Activated Charcoal & Keratin Shampoo - No Sulphates, Parabens, Silicones, Salt & Color - 300 ml",
+        info:"WOW Skin Science Activated Charcoal & Keratin Shampoo gives dull, limp, thin and lifeless hair advanced cleansing, clarifying and repairing care. Powered with Activated Charcoal and Hydrolyzed Keratin Protein. Removes scalp buildups caused by dead cells and chemical laden hair styling products. Activated charcoal gently traps, binds and washes away buildups along with dirt and grime to cleanse hair and scalp without stripping hair's own healthy oils. Hydrolyzed Keratin Protein provides essential nutrients to hair follicles and penetrates hair shafts to repair this damage and restore strength.",
+        Dprice:399,
+        price:"499"
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/Vs_97d7dc28-215f-4496-854a-5b380ce2a95b_1280x.jpg?v=1579778504",
+        title:"Activated Charcoal Skin Refining Kit - Face Scrub + Face Wash",
+        info:"WOW Skin Science Activated Charcoal Face Wash & Face Scrub are two premium skin care products combined as WOW Skin Refining Kit. Face wash with activated charcoal beads to trap pollutants, dirt & impurities, heal & soothe the skin. Face Scrub comes with a brilliant exfoliating blend that helps get rid of blackheads, take care of enlarged pores.",
+        Dprice:624,
+        price:624
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/Charcoal_tube200ml_1_1280x.jpg?v=1595019631",
+        title:"Charcoal & Keratin Shampoo - No Sulphates, Parabens, Silicones, Salt & Color - 200 ml",
+        info:"WOW Skin Science Activated Charcoal & Keratin Shampoo gives dull, limp, thin and lifeless hair advanced cleansing, clarifying and repairing care. Powered with Activated Charcoal and Hydrolyzed Keratin Protein. Removes scalp buildups caused by dead cells and chemical laden hair styling products. ",
+        Dprice:299,
+        price:"299"
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/charcoal-shampoo-500-1_1280x.jpg?v=1597923176",
+        title:"Activated Charcoal & Keratin Shampoo - 500 ml",
+        info:"WOW Skin Science Activated Charcoal & Keratin Shampoo gives dull, limp, thin and lifeless hair advanced cleansing, clarifying and repairing care. Powered with Activated Charcoal and Hydrolyzed Keratin Protein. Removes scalp buildups caused by dead cells and chemical laden hair styling products. Activated charcoal gently traps, binds and washes away buildups along with dirt and grime to cleanse hair and scalp without stripping hair's own healthy oils. Hydrolyzed Keratin Protein provides essential nutrients to hair follicles and penetrates hair shafts to repair this damage and restore strength. ",
+        Dprice:575,
+        price: 575
+        },
+        
+        
+    ]
+    
+    
+ import append_html from "./components/append.js"
+ 
+     
+ document.querySelector("#append_html").innerHTML=append_html();
+
+ 
+ import {map,grid,detailed,filter} from "./scripts/main.js";
+  
+  
+// map function for strt page
+
+ let parent=document.querySelector("#main");
+  
+ let sec_parent= document.querySelector("#detailed")
+  
+ map(hair_shampoo_data,parent,sec_parent)
+
+   
+//   for grid view
+  
+ let img1=  document.querySelector("#creat_grid")
+ let img2=  document.querySelector("#creat_detailed");
+   
+ document.querySelector("#creat_grid").addEventListener("click",()=>{
+          grid(hair_shampoo_data,parent,sec_parent,img1,img2)
+    })
+
+     
+//  for detailed view
+
+document.querySelector("#creat_detailed").addEventListener("click",()=>{
+    detailed(hair_shampoo_data,parent,sec_parent,img1,img2)
+})
+ 
+
+// sort and filter 
+
+let selected=document.querySelector("#select_option").value;
+document.querySelector("#select_option").addEventListener("change",()=>{
+ let selected=document.querySelector("#select_option").value
+ filter(selected,hair_shampoo_data,parent,sec_parent,img1,img2)
+})
+
+</script>

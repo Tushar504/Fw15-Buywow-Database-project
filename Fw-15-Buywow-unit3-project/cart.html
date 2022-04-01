@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="styles/navbar.css">
+  
+</head>
+<style>
+    #contain {
+        width: 88%;
+        border: ;
+        margin: auto;
+        display: flex;
+        margin-bottom: 20px;
+        margin-top: 45px;
+        justify-content: space-between;
+        margin-bottom: 59px;
+        height: 60px;
+    }
+
+    #box {
+        width: 88%;
+        border: ;
+        margin: auto;
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    #cart_img{
+        width: 130px;
+    }
+
+    #title {
+        border: ;
+        width: 280px;
+        margin: 20px;
+        margin-left: 70px;
+    }
+
+    #rupee {
+        border: ;
+        padding: 40px;
+        margin-left: 80px;
+
+    }
+
+    #add_minus {
+        border: 1px solid rgb(206, 198, 190);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 50px;
+        margin: 40px;
+        margin-left: 100px;
+        width: 200px;
+        text-align: center;
+
+    }
+
+    #con {
+        border: 1px;
+        color: rgb(7, 7, 7);
+        background-color: rgb(208, 224, 219);
+    }
+
+    #total {
+        margin: 50px;
+    }
+
+    #dust {
+        width: 17px;
+        height: 17px;
+        margin: 50px;
+    }
+
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    #Checkoout {
+        font-size: large;
+        border: 0px;
+        width: 200px;
+        background-color: black;
+        color: aliceblue;
+    }
+
+    hr {
+        width: 88%;
+        margin-bottom: 70px;
+        border: 1 solid rgb(195, 201, 202);
+    }
+
+    #last {
+        display: flex;
+    }
+
+    #contain2 {
+        border: ;
+        width: 88%;
+        margin: auto;
+        margin-top: 90px;
+        display: flex;
+        font-size: large;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #text {
+        margin-left: 570px;
+        ;
+        margin-right: 50px;
+    }
+
+    textarea {
+        width: 350px;
+        height: 170px;
+    }
+
+    #goback {
+        font-size: small;
+    }
+
+    #grand_total {
+        width: 200px;
+        border: ;
+        font-size: large;
+        margin-left: 23px;
+        ;
+    }
+
+    #Checkout {
+        color: rgb(255, 255, 255);
+        width: 100%;
+        padding: 10px;
+        font-size: large;
+        background-color: black;
+    }
+
+    a{
+        color: white;
+        text-decoration: none;
+
+    }
+</style>
+
+<body>
+    <div id="main_navbar"></div>
+    <div id="navbar">
+
+        <!-- to add navbar -->
+    </div>
+
+
+    <div id="contain">
+        <h1>Your cart</h1>
+        <button id="Checkoout"><a href="checkout.html">Checkout</a></button>
+    </div>
+    <hr>
+    <div id="container">
+        <!-- //to chow cart -->
+    </div>
+    <div id="contain2">
+        <div id="goback">Continue shopping</div>
+        <div id="text">
+            <div>
+                <p> Additional notes</p>
+                <textarea id="note">Additional notes</textarea>
+            </div>
+        </div>
+        <div id="grand_total">
+            <p id="put"></p>
+            <button id="Checkout"><a href="checkout.html">Checkout</a></button>
+        </div>
+    </div>
+
+    <div id="last">
+        <!-- to add last box -->
+    </div>
+
+    <div id="main_footer"></div>
+</body>
+
+</html>
+<script>
+    let data = JSON.parse(localStorage.getItem("cart"))
+    let grand_total = 0;
+    console.log(data);
+    data.map(function (ele, index) {
+        var count = 1;
+        let div = document.createElement("div");
+        div.id = "box";
+
+        let img = document.createElement("img")
+        img.src = ele.img;
+        img.id = "cart_img"
+
+        let title = document.createElement("p");
+        title.innerHTML = ele.title;
+        title.id = "title";
+
+        let price = document.createElement("price");
+        price.innerHTML = "<sup>₹</sup>" + ele.Dprice + ".00"
+        price.id = "rupee"
+
+
+
+        let divsee = document.createElement("div");
+        divsee.id = "add_minus"
+
+        let min = document.createElement("button");
+        min.innerHTML = "-";
+        min.id = "con"
+        min.addEventListener("click", function () {
+            count--;
+            cur.innerHTML = count
+            minus(ele, price2, count)
+        })
+
+        let cur = document.createElement("button");
+        cur.innerHTML = count;
+        cur.id = "con"
+        let add = document.createElement("button");
+        add.innerHTML = "+";
+        add.id = "con"
+        add.addEventListener("click", function () {
+            count++;
+            cur.innerHTML = count
+            mul(ele, price2, count)
+        });
+
+        let price2 = document.createElement("price");
+        price2.innerHTML = ele.Dprice
+        price2.id = "total"
+
+        let img2 = document.createElement("img");
+        img2.src = "https://cdn-icons-png.flaticon.com/512/3096/3096673.png";
+
+        img2.id = "dust";
+        img2.addEventListener("click", () => {
+            remove(index);
+        })
+
+        divsee.append(min, cur, add)
+        div.append(img, title, price, divsee, price2, img2)
+        document.querySelector("#container").append(div)
+        grand_total += ele.Dprice
+        function remove(index) {
+            data.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(data));
+            window.location.href = "cart.html"
+        }
+    })
+
+   
+
+    var g;
+
+    let mul = (data, price2, count) => {
+        let j = data.Dprice-grand_total;
+        ;
+        let ori = data.Dprice*count;
+        ;
+        price2.innerHTML = ori;
+        g = ori
+        var k = data.Dprice+ori+100
+        put.innerHTML = `<b>GRAND TOTAL: ₹${k}</b>`
+        var total = localStorage.setItem("total",JSON.stringify(k))
+    }
+
+    
+    let minus = (data, price2, count) => {
+        var l = price2.innerHTML
+        
+
+        let ori = (l -data.Dprice);
+        let o = Number(l)+100 
+        put.innerHTML = `<b>GRAND TOTAL: ₹${o}</b>`
+        price2.innerHTML = Math.floor(ori)
+        console.log(Math.floor(ori))
+            ; var total = localStorage.setItem("total",JSON.stringify(o))
+    }
+
+    let put = document.querySelector("#put");
+    put.innerHTML = `<b>GRAND TOTAL: ₹${grand_total}</b>`;
+</script>
+<script src="https://kit.fontawesome.com/b4ce217570.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="scripts/navbar.js"></script>
+
+<script type="module">
+
+    import {navbar, footer} from "/components/index.js"
+    
+    let navbar_div = document.querySelector("#main_navbar");
+   navbar_div.innerHTML = navbar();
+
+   let footer_div = document.querySelector("#main_footer");
+   footer_div.innerHTML = footer();
+
+</script>

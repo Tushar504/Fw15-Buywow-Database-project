@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Document</title>
+     <link rel="stylesheet" type="text/css" href="styles/navbar.css">
+   </head>
+ 
+   <style>
+    #container {
+       display: flex;
+      
+       width:40%;
+       margin: auto;
+       text-align: center;
+       margin-top: 60px;;
+       margin-bottom: 20px;
+     }
+ 
+     .form_sigin{
+       width: 10%;
+     }
+ 
+     .sigin_input{
+       margin-top: 5%;
+     }
+    
+     #register-form{
+         
+         width:100%;
+        
+        }
+       
+        .sigin_input{
+            width:610px;
+            padding: 13px;
+            background-color: rgb(208, 217, 218);
+            border:0ch;
+        }
+        .sigin_btn{
+            font-size: large;
+            margin-top:20px;
+            width:200px;
+            padding:9px;
+            color: white;
+            border:0px;
+            background-color: black;
+           margin-right: 450px;
+
+        }
+      
+   </style>
+   <body>
+      <div id="main_navbar"></div>
+     <div id="container">
+    
+       <div id="login-form">
+         <h1>Login</h1>
+         <form class="form_sigin">
+           <input class="sigin_input" type="text" id="login-username" placeholder="email" />
+           <input class="sigin_input" type="text" id="login-password" placeholder="Password" />
+         </form>
+ 
+         <button class="sigin_btn" onclick="Login()">Login</button>
+       </div>
+     </div>
+
+     <div id="main_footer"></div>
+   </body>
+ </html>
+ <script>
+  
+
+   let Login = async () => {
+        
+
+    try{
+
+       let login_data = {
+           email:document.getElementById("login-username").value,
+           password:document.getElementById("login-password").value,
+       }
+       let login_data_json = JSON.stringify(login_data);
+
+       let res = await fetch("http://localhost:5000/login",{
+
+           method:"POST",
+           body:login_data_json,
+              
+           headers :{
+            "Content-Type":"application/json",
+        },   
+        });
+
+        let data = await res.json();
+       
+        if(data.message){
+          alert(data.message)
+        }
+        else if(data.errors){
+          alert(data.errors[0].msg)
+        }
+        else{
+        
+         
+          localStorage.setItem("token",JSON.stringify(data.token))
+          
+          alert("login successfull")
+
+           window.location.href = "home.html"
+           
+
+        }
+        // console.log(data);
+        // getUser(login_data.username,data.token)
+    }  catch(err){
+          console.log(err)
+    }
+  };
+
+
+
+  // let getUser = async (username,token) => {
+       
+  //    try {
+
+  //        let res = await fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,{
+          
+  //       //method is by default;
+  //       headers :{
+  //           "Content-Type":"application/json",
+  //           Authorization: `Bearer ${token}`,
+  //       },   
+  //     });
+
+  //     let data = await res.json();
+  //     console.log(data);
+  //    } catch(err){
+  //        console.log(err);
+  //    }
+  //   };
+ </script>
+<script type="text/javascript" src="scripts/navbar.js"></script>
+<script src="https://kit.fontawesome.com/b4ce217570.js" crossorigin="anonymous"></script>
+
+ <script type="module">
+   
+
+  import {navbar, footer} from "/components/index.js";
+  
+  let navbar_div = document.querySelector("#main_navbar");
+   navbar_div.innerHTML = navbar();
+
+   let footer_div = document.querySelector("#main_footer");
+   footer_div.innerHTML = footer();
+ </script>

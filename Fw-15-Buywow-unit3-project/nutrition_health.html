@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" type="text/css" href="./styles/navbar.css">
+</head>
+ <body>
+    <div id="main_navbar"></div>
+    <div id="navbar">
+        <p>Home</p>
+        <p> / Omega Fatty Acids</p>
+    </div>
+    <div id="page_info">
+        <p id="big_name">Omega Fatty Acids</p>
+        <p>Never let nutritional supplements take a back seat in your self-care regimen. Ensure that your body receives complete nutrition with the WOW Life Science range of Nutritional Supplements. Plant-based supplements with nutritional value that complements your regular diet.  </p>
+    </div>
+    <div id="append_html">
+   
+   </div>
+   <div id="main_footer"></div>
+</body>
+</html>
+<script type="text/javascript" src="./scripts/navbar.js"></script>
+<script src="https://kit.fontawesome.com/b4ce217570.js" crossorigin="anonymous"></script>
+<script type="module">
+
+import {navbar, footer} from "/components/index.js"
+	
+	 document.querySelector("#main_navbar").innerHTML = navbar();
+
+  let footer_div = document.querySelector("#main_footer");
+     footer_div.innerHTML = footer();
+  let  hair_shampoo_data=[
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/apple-cider-vinegar-bottel_520x.jpg?v=1627897442",
+        title:"Organic Apple Cider Vinegar",
+        info:"Apple cider vinegar is natural, raw, unfiltered and non-pasteurized with 4% 'Mother of Vinegar' for extra potency. It has been made using cold-pressed juice of himalayan organic apples of the finest quality. Holding up the bottle with the product towards light reveals fine strands floating in it.",
+        Dprice:399,
+        price:898
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/omega-3-capsules_520x.jpg?v=1625757030",
+        title:"Omega 3 Capsules with Fish oil - 1000mg Triple Strength - 60 Softgel Capsules",
+        info:"Powered with 100% pure, unfiltered and unpasteurized Apple Cider Vinegar, Sweet Almond Oil and Argan Oil; it helps gently detoxify the hair & scalp by clearing up the buildups caused by dust, pollution, dead scalp cells and styling products. WOW Skin Science Apple Cider Vinegar Shampoo does not contain any harmful chemicals like Sulphates or Parabens. You Can Buy Our Apple Cider Vinegar Shampoo At Best Price From : Amazon, Flipkart, Nykaa, Purplle Benefits Of Apple Cider Vinegar Shampoo Keep your frizzy hair in control and enjoy an overall smooth, frizz-free mane. Keeps dandruff and flakes in check for a lighter, cleaner and an itch-free feel. Regular use helps bring silkiness, strength, and gloss to the hair. Helps remove tangles, closes up the cuticles, improves porosity - all of which lead to a reduction in split ends and breakage. Formulated to deliver natural & healthy scalp and hair care Apple Cider Vinegar Shampoo 100% Pure ACV Premium shampoo powered with 100% pure, unfiltered & unpasteurized Apple Cider Vinegar, Sweet Almond Oil & Argan Oil Apple Cider Vinegar Shampoo Gentle Shampoo Gently detoxifies the hair & scalp by clearing up the buildups due to dust, pollution, dead scalp cells & styling products Apple Cider Vinegar Shampoo Helps Remove Dandruff Checks dandruff & flakes; helps bring silkiness, strength & gloss to the hair Key Ingredients Of WOW Skin Science Apple Cider Vinegar Shampoo Raw Apple Cider Vinegar - Rich in vitamins, minerals, antioxidants & enzymes; Safe & natural antimicrobial; Very effective in removing flakes & buildups Sweet Almond Oil - Rich in essential fats & vitamin E, nourishes hair & scalp, boosts gloss Argan Oil - Rich in linoleic & omega 6 fatty acids, keeps the hair soft & moisturized Explore the entire range of Shampoo available on BuyWOW. You can browse through the complete list of Apple Cider Vinegar Products. Shop Other WOW Skin Science Shampoo's: Onion Shampoo | Amla Shampoo | Rice Water Shampoo | Argan Oil Shampoo | Coconut Milk Shampoo Shop Apple Cider Vinegar Range: Apple Cider Vinegar | Apple Cider Vinegar Face Wash | Apple Cider Vinegar Capsules Shop Other Hair Related Products : Onion Hair Oil | Onion Conditioner | Aloe Vera Gel | Amla hair Oil | Rice Hair Oil | Rice Water Conditioner | Argan Oil Conditioner | Argan Hair Oil | Extra Virgin Coconut Oil | Coconut Milk Conditioner",
+        Dprice:799,
+        price:898
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/extra-virgin-coconut-oil-bottel_1280x.jpg?v=1629268984",
+        title:"Cold Pressed Extra Virgin Coconut Oil - 400",
+        info:"Extra virgin coconut oil is 100% natural, cold-pressed and extracted from fresh and raw coconut milk using state-of-the-art centrifugal technology. Extra virgin coconut oil gives your health benefit of antioxidant-rich. Extra virgin coconut oil is known to have multiple restorative properties that help your overall health and wellness.",
+        Dprice:499,
+        price:499
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/testo-boost-capsules_1280x.jpg?v=1639820660",
+        title:"Vegetarian Testoboost Capsules 550mg - 60 Capsules",
+        info:"Testo boost capsules is a testosterone booster for men. Aging process can lower the testosterone levels in the body leading to weight gain, loss in muscle tone and fatigue. Testosterone boosters help in restoring muscle mass and strengthening bones. It is known to improve heart health and blood circulation and energise the body. TestoBoost, containing 6 powerful herbs, raises testosterone absorption levels in your body to improve stamina, and accelerate fat burn.",
+        Dprice:699,
+        price:699
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/probiotics-capsules-3_1280x.jpg?v=1638521201",
+        title:"Probiotics 20 Billion CFU (14 Probiotic Strains) 500 mg - 60 Vegetarian Capsules",
+        info:"Probiotics capsules is a premium probiotics blend of 14 healthy, gut-friendly and 'good' bacteria strains that help enhance your total wellness by promoting digestion, immunity and nutrient absorption in the gut. Every WOW Life Science Probiotics capsules delivers 20 billion CFUs of ‘good’ bacteria to your intestines. These digestive enzyme-resistant good bacteria enhance balance and improving immunity. It is 100 percent vegetarian, gluten-free capsules, totally free of binders, fillers or additives.",
+        Dprice:999,
+        price:999
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/multivitamin-capsules-for-women_1280x.jpg?v=1638428329",
+        title:"Multivitamin for Women - with Vitamin A, Lutein & Lycopene - 60 Veg Capsules",
+        info:"Multivitamin capsules for women are a nutrition-packed combination of essential vitamins, minerals and specialized blends. The 12 essential vitamins support in boosting energy and improving metabolism; 11 macrominerals and trace minerals help to maintain healthy bones and muscles; and 5 specialized blends with amino acids, antioxidants, and fruit and herb extracts help to fight oxidative damage and manage nerve. heart and gut health. Multivitamin capsules for women have been formulated to fill the nutritional gap in your daily diet to support your wellness goals",
+        Dprice:699,
+        price:699
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/BodyCleanse1_1280x.jpg?v=1617702302",
+        title:"Body Cleanse 750mg - 60 Vegetarian Capsules",
+        info:"Wow Life Science Body Cleanse Supplement is formulated to cleanse your body through gentle laxative action and help improve your overall health. It helps by cleaning out your colon and detoxifying your gut. The benefits are multifold: enhanced energy, better digestion, faster metabolism, less bloating, healthy weight loss, and healthier-looking skin. The supplement is a blend of well-known herbal laxatives, and antioxidants like amla (Indian gooseberry).",
+        Dprice:999,
+        price:999
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/garcinia-cambogia-capsules_1280x.jpg?v=1638439684",
+        title:"Garcinia Cambogia Capsules - 60 Count",
+        info:"Garcinia Cambogia Capsules is powered by hydroxycitric acid (HCA) which is a clinically proven all-natural fat burning and metabolism boosting compound which is found in the garcinia cambogia fruit. HCA helps in blocking the production of the body's fat making enzyme, thereby helping in reducing the body fat. WOW Life Science Garcinia cambogia capsules also",
+        Dprice:1099,
+        price:499
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/apple-cider-vinegar-capsules-information_1280x.jpg?v=1628749384",
+        title:"Apple Cider Vinegar Capsules 500 mg - 60 Count",
+        info:"Apple cider vinegar capsules are the easiest and the most convenient way to enjoy all the health friendly goodness of raw, unfiltered and unpasteurized apple cider vinegar. Apple cider vinegar contains health restorative acetic acid, minerals, soluble fibre and live enzymes. It is a popular and time-honoured traditional folk remedy which has been used since a long time to optimize weight, lood sugar, heart health, joints, digestion and immunity.[/des]",
+        Dprice:599,
+        price:"699"
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/milk-thistle-capsules_1280x.jpg?v=1639807752",
+        title:"Vegetarian Milk Thistle Capsules 600mg - 60 Capsules",
+        info:"Milk thistle capsules provides you with a potent dose of antioxidant which helps in improving your wellbeing. It is a potent flavonoid antioxidant that neutralizes free radicals. Milk thistle (silybummarianum) is an herb native to Mediterranean region that has been in use for over 2000 years by the traditional healers in Europe to treat liver disorders. Milk thistle extract is",
+        Dprice:999,
+        price:999
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/glutathione-capsules_1280x.jpg?v=1639203726",
+        title:"Glutathione with Milk Thistle Extract 500 mg - 30 Vegetarian Capsules",
+        info:"Glutathione capsules is ideal for improving your overall health. Glutathione is an antioxidant produced in body cells. It is comprised largely of 3 amino acids: Glutamine, glycine and cysteine. It has been known to prevent cellular damage caused by free radicals and peroxides. It detoxifies the body for clearer complexion and liver health. WOW Life Science Glutathione Capsules contains Milk Thistle extract and Alpha Lipoic Acid to boost its levels in the body. Glutathione is considered so important in medical science that there are more. [/des]",
+        Dprice:599,
+        price:"699"
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/algae-rich-omega-3-capsules_1280x.jpg?v=1637648304",
+        title:"Algae-Rich Omega 3 Capsules - EPA + DHA Enriched Vegan Capsules - 60 Vegetarian Capsules",
+        info:"Algae-Rich Omega 3 Capsules are formulated from algae, which is considered a primary source of omega 3. Omega 3 Vegetarian Capsules do not leave a fishy after-taste in the mouth as they do not contain any fish oil. WOW Life Science Algae-Rich Omega 3 Capsules consist of fatty acids: Docosahexaenoic acid (DHA) and Eicosapentaenoic acid (EPA). DHA is known to support cognitive health and eye health; EPA helps to keep the heart healthy and maintains healthy cholesterol by maintaining “good” HDL cholesterol levels. Omega 3 aids to improve calcium content ",
+        Dprice:499,
+        price:1399
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/immunity-booster-capsules_1280x.jpg?v=1639722786",
+        title:"Immunity Booster Capsules - Support Healthy Immune System - 60 Veg Capsules",
+        info:"Immunity booster capsules with elderberry extract, echinacea extract, vitamin C, garlic extract, zinc, and fruits powder blend. The blend of these ingredients helps to neutralize free radicals, boosts immunity and metabolism, maintain bladder, heart, and respiratory health as well as supports a healthy cholesterol level and maintains skin health. It helps fill the nutritional gaps in your daily diet and supports wellbeing. It is a vegetarian dietary supplement that helps manage oxidative damage. Every capsule of WOW Life Science Immunity booster capsules contains a 600 mg blend of signature, potent formulation for your wellness. It is made in the Himalayas. It is 100% vegetarian and cruelty-free. 60N Vegetarian Capsules per pack. [/des]",
+        Dprice:699,
+        price:""
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/l-arginine-capsules_1280x.jpg?v=1640256766",
+        title:"Vegetarian L-Arginine Amino Acid Capsules 1000mg - 60 Capsules",
+        info:"L Arginine capsules is a quality supplement that provides therapeutic-grade L-Arginine amino acids to support a healthy lifestyle. L-arginine is a chemical building block of our body called an amino acid. It is obtained from our diet and is necessary for our body to make proteins. L-arginine gets converted into nitric oxide inside the body. L-Arginine - a semi-essential amino acid vital for optimal functioning of various systems - is used extensively in the body for essential functions such as muscle protein synthesis and ammonia detoxification",
+        Dprice:799,
+        price:799
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/green-coffee-bean-capsules_1280x.jpg?v=1638512791",
+        title:"Green Coffee Bean Extract Capsules - 60 Count",
+        info:"Green Coffee Bean Capsules extract is 100 percent natural and highly concentrated with GCA'sto give you the best results. Each capsule contains 800mg to maximize your results. Green coffee bean extract naturally contains polyphenolic antioxidants called chlorogenic acids or GCA's, which can support suppressing appetites, weight management, promoting [/des]",
+        Dprice:1099,
+        price:""
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/MultivitaminforMen30N1_1280x.jpg?v=1631180676",
+        title:"Multivitamin for Men - with Glycine, Green Tea, Turmeric, Vitamins",
+        info:"Multivitamin for men capsules with 12 essential vitamins, trace minerals, 11 macrominerals, five specialized blends with antioxidants, amino acids, fruit and herb extracts. The blend of these ingredients help to maintain healthy bones and muscles, metabolism, manage energy levels, prostate, heart, nerve, and gut health. Every capsule of WOW Life Science Multivitamin for Men. [/des]",
+        Dprice:399,
+        price:""
+        },
+        {img:"https://cdn.shopify.com/s/files/1/1375/4957/products/plant-based-protein-powder_1280x.jpg?v=1635318169",
+        title:"Plant-Based Protein Powder - Made from Pea & Brown Rice Protein - Chocolate Flavour– For a healthier lifestyle",
+        info:"Plant Based Protein Powder is your perfect health companion that helps you meet your daily protein requirement. The protein powder includes a blend of natural sources of protein including Pea & Brown Rice Protein and antioxidant-rich extracts. Paired with regular exercise and a healthy diet, this can be your go-to to enhance muscle growth and overall fitness. Our powder is a vegan plant-based complete protein powder with all the essential amino acids that cannot be naturally produced by the body. WOW Life Science Plant based protein powder is vegetarian and gluten-free supplement helps to support a healthy weight and contains enzymes like papain and bromelain that help with faster and better digestion. [/des]",
+        Dprice:1299,
+        price:1299
+        },
+    ]
+    
+    
+ import append_html from "./components/append.js"
+ 
+     
+ document.querySelector("#append_html").innerHTML=append_html();
+
+ 
+ import {map,grid,detailed,filter} from "./scripts/main.js";
+  
+  
+// map function for strt page
+
+ let parent=document.querySelector("#main");
+  
+ let sec_parent= document.querySelector("#detailed")
+  
+ map(hair_shampoo_data,parent,sec_parent)
+
+   
+//   for grid view
+  
+ let img1=  document.querySelector("#creat_grid")
+ let img2=  document.querySelector("#creat_detailed");
+   
+ document.querySelector("#creat_grid").addEventListener("click",()=>{
+          grid(hair_shampoo_data,parent,sec_parent,img1,img2)
+    })
+
+     
+//  for detailed view
+
+document.querySelector("#creat_detailed").addEventListener("click",()=>{
+    detailed(hair_shampoo_data,parent,sec_parent,img1,img2)
+})
+ 
+
+// sort and filter 
+
+let selected=document.querySelector("#select_option").value;
+document.querySelector("#select_option").addEventListener("change",()=>{
+ let selected=document.querySelector("#select_option").value
+ filter(selected,hair_shampoo_data,parent,sec_parent,img1,img2)
+})
+
+</script>
