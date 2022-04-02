@@ -29,7 +29,7 @@ const authenticate=async(req,res,next)=>{
       }
    } 
    catch (error) {
-       return res.status(400).send(error.message)
+       return res.status(400).send(error)
    }
 }
 module.exports=authenticate

@@ -1,3 +1,17 @@
+const take = async (find) => {
+
+    try {
+        let datatake = await fetch(`http://localhost:5000/${find}`);
+        let datafrom = await datatake.json();
+        console.log(datafrom)
+        return datafrom;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+
 
 function map(data,parent,sec_parent){
     let storecart = JSON.parse(localStorage.getItem("cart"))||[];
@@ -26,8 +40,9 @@ function map(data,parent,sec_parent){
     if(window.location.href!=="http://127.0.0.1:5501/cart.html"){
         button.addEventListener("click",() =>{
         
-        alert("product added to cart")
+  
         funcart(ele);
+    //  alert("product added to cart")
     })
     let funcart = async(cartdata) =>{
         //  storecart.push(cartdata);
@@ -61,7 +76,12 @@ function map(data,parent,sec_parent){
               let data = await res.json();
             
               console.log(data)
-             
+             if(data.message){
+                 alert("login required")
+                 window.location.href = "sigin.html"
+             }else{
+                 alert("product added to cart")
+             }
               
           } catch (error) {
               console.log("error:", error);
@@ -139,4 +159,4 @@ function detailed(data,parent,sec_parent,img1,img2){
     }
 }
    
-export  {map,grid,detailed,filter}
+export  {take,map,grid,detailed,filter}
