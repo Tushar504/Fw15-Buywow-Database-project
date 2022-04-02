@@ -1,11 +1,12 @@
 function navbar(){
 	return `<div class="search_div">
 		<span><i class="fa fa-times" aria-hidden="true" class="search_1" onclick="search_divhidd()"></i></span>
-		<p>Find anything you need</p>
+		<p class="search_div_p">Find anything you need</p>
 		<i class="fa fa-search" aria-hidden="true"></i>
-		<input type="text" name="" placeholder="Search Products...">
-
-
+		<input type="text" name="" id="search_query" oninput="main()" placeholder="Search Products...">
+		<div class="search_item" id="search_item">	
+		
+		</div>
 	</div>
 
 <div class="nav_top">
@@ -13,7 +14,7 @@ function navbar(){
 	</div>
 </div>	
 
-<div class="navbar">
+<div class="navbar">	
 	<div class="ham_bur"><i class="fas fa-bars"></i></div>
 
 	<div class="navbar_img" onclick="window.location.href='home.html'">
@@ -266,7 +267,7 @@ function footer(){
 		<hr>
 		<div class="main_img_div">
 			<div class="inner_img_div">
-				<img src="https://cdn.shopify.com/s/files/1/1375/4957/products/Front-Combo-1024X1024_d36e6f72-1b19-464b-9ecd-bc3b5938f455.jpg?v=1645597746">
+				<img src="https://cdn.shopify.com/s/files/1/1375/4957/products/coconutmilk_arganbodylotion1_ac8d46e5-8efc-4a1e-ae8d-a3660901c853_1280x.jpg?v=1636630369">
 			</div>
 			<div class="inner_p_div">
 				<p>Shea Butter and Cocoa Butter Moisturizing Body Lotion + Himalayan Rose Gold Scrub By Body Cupid - 400 ml</p>

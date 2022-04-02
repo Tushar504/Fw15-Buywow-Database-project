@@ -1,7 +1,7 @@
 const mongoose=require("mongoose")
 
 const connect=()=>{
-    return mongoose.connect("mongodb://127.0.0.1:27017/buywow_database")
+    return mongoose.connect("mongodb+srv://surajifastdigital1:surajsunita@cluster0.smgih.mongodb.net/unit4project")
 }
 
 module.exports=connect

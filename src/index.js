@@ -4,7 +4,14 @@ const {register,login}=require("./controllers/auth.controller")
 const { body, validationResult } = require('express-validator');
 const cors=require("cors")
 const cartController=require("./controllers/cart.controller")
+
+const usercontroller = require("./controllers/searchcontroller")
+// const {login, register} = require("./controllers/auth")
 app.use(cors())
+
+
+app.use("/search", usercontroller)
+
 app.use(express.json())
 
 
