@@ -4,7 +4,12 @@ const { register, login } = require("./controllers/auth.controller");
 const { body, validationResult } = require("express-validator");
 
 const cartController = require("./controllers/cart.controller");
-
+/////////sachin
+const bestController=require("./controllers/best.controller.js")
+const bodyController=require("./controllers/body.controller.js")
+const homeController=require("./controllers/home.controller.js")
+const summerController=require("./controllers/summer.controller.js")
+////sachin
 const bath_body = require("./controllers/bath_body_controller");
 const search_result = require("./controllers/searchcontroller");
 
@@ -29,7 +34,12 @@ app.use("/wellness", wellness);
 app.use("/massage", massage);
 app.use("/charcol", charcol);
 app.use("/nutrition_health", nutrition_health);
-
+// Sachinuse
+app.use("/summer",summerController)
+app.use("/body",bodyController)
+app.use("/home",homeController)
+app.use("/Best",bestController)
+// meeeeeeeeee
 app.post(
   "/register",
   body("first_name").notEmpty().withMessage("first name is required"),
