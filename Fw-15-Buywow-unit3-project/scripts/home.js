@@ -1,48 +1,27 @@
-var data = [
-    {
-     
-      title:
-        "Onion Hair Oil With Black Seed Oil Extracts Helps Control Hair Fall ",
-      Dprice: 399.00,
-      img:
-        "https://cdn.shopify.com/s/files/1/1375/4957/products/Onion-hair-oil-1_375x.jpg?v=1643119805&w=200&h=200",
-      rate: "★ ★ ★ ★ ★",
-      role: "ADD TO CART",
-    },
-    {
-    
-      title:
-        "Apple Cider Vinegar Foaming Face Wash with Built-In Foaming Face Brush for Deep",
-      Dprice: 249,
-      img:
-        "https://cdn.shopify.com/s/files/1/1375/4957/products/ACV-FW_375x.jpg?v=1643119836&w=200&h=200",
-      rate: "★ ★ ★ ★ ★",
-      role: "ADD TO CART",
-    },
-    {
-      
-      title:
-        "Onion Shampoo for Hair Growth and Hair Fall Control ",
-      Dprice: 277,
-      img:
-        "https://cdn.shopify.com/s/files/1/1375/4957/products/Onion-shampoo-1_375x.jpg?v=1643119924&w=200&h=200",
-      rate: "★ ★ ★ ★ ★",
-      role: "ADD TO CART",
-    },
-    {
-      
-      title:
-        "Onion Shampoo for Hair Growth and Hair Fall Control ",
-      Dprice: 277,
-      img:
-        "https://cdn.shopify.com/s/files/1/1375/4957/products/Onion-shampoo-1_375x.jpg?v=1643119924&w=200&h=200",
-      rate: "★ ★ ★ ★ ★",
-      role: "ADD TO CART",
-    },
-  ];
-  
-var cart=JSON.parse(localStorage.getItem("cart")) || []
+let url = 'http://localhost:5000/Best';
 
+async function getData(url,fun){
+
+   try{
+    let res= await fetch(url);
+
+      let data = await res.json();
+ 
+     fun(data); 
+    //  console.log(data);
+
+   }
+   catch(err) {
+       console.log(err);
+   }
+}
+
+getData(url,appendData);
+
+  
+function appendData(data){
+var a=document.querySelector("#Container2");
+a.innerHTML=""
 data.map(function (ndata) {
   var cont=document.getElementById("Container2")
 
@@ -89,52 +68,16 @@ data.map(function (ndata) {
   Button2.setAttribute("id","Showmore")
    Button2.innerHTML="SHOWMORE"
    document.querySelector("#MainCont").append(Button2)
+}
 
 // /______________________Best Selling Nutrition & Health
 
-var data2 = [
-  {
-   
-    title:
-      "Aloe Vera Gel For Skin And Hair",
-    Dprice: 429,
-    img:
-      "https://cdn.shopify.com/s/files/1/1375/4957/products/apple-cider-vinegar-bottel_1280x.jpg?v=1627897442",
-    rate: "★ ★ ★ ★ ★",
-    role: "ADD TO CART",
-  },
-  {
-  
-    title:
-      "Sunscreen Matte Finish - SPF 35 PA++ - Daily Broad Spectrum - UVA &UVB",
-    Dprice: 375,
-    img:
-      "https://cdn.shopify.com/s/files/1/1375/4957/products/omega-3-capsules_375x.jpg?v=1625757030",
-    rate: "★ ★ ★ ★ ★",
-    role: "ADD TO CART",
-  },
-  {
-    
-    title:
-      "Aloe Vera Face Wash With Hyaluronic Acid And Pro Vitamin B5 - No Parabens, Silicones ",
-    Dprice: 249,
-    img:
-      "https://cdn.shopify.com/s/files/1/1375/4957/products/extra-virgin-coconut-oil-bottel_375x.jpg?v=1629268984",
-    rate: "★ ★ ★ ★ ★",
-    role: "ADD TO CART",
-  },
-  {
-    
-    title:
-      "Foaming Aloe Vera Face Wash With Built-In Face Brush For Deep Cleansing",
-    Dprice: 399,
-    img:
-      "https://cdn.shopify.com/s/files/1/1375/4957/products/probiotics-capsules_375x.jpg?v=1638521199",
-    rate: "★ ★ ★ ★ ★",
-    role: "ADD TO CART",
-  },
-];
-
+var linkBest="http://localhost:5000/home";
+getData(linkBest,appendDatabest);
+function appendDatabest(data2){
+ 
+  var b=document.querySelector("#Health")
+  b.innerHTML=""
 data2.map(function (ndata) {
   var cont1=document.getElementById("P")
 
@@ -165,7 +108,7 @@ data2.map(function (ndata) {
     })
    
     divT.append( image,product,name,rating,designation);
-document.querySelector("#P").append(divT)
+document.querySelector("#Health").append(divT)
 
 
 function addTocart(ndata){
@@ -180,52 +123,15 @@ function addTocart(ndata){
   Button3.setAttribute("id","Showmore")
    Button3.innerHTML="SHOWMORE"
    document.querySelector("#M").append(Button3)
-
+}
   //  """""""""""""""""""""""""""""""""Summer essentials
-  var data2 = [
-    {
-     
-      title:
-        "Organic Apple Cider Vinegar",
-      Dprice: 429.00,
-      img:
-        "https://cdn.shopify.com/s/files/1/1375/4957/products/aloe-vera-gel-bottle_375x.jpg?v=1626425687",
-      rate: "★ ★ ★ ★ ★",
-      role: "ADD TO CART",
-    },
-    {
-    
-      title:
-        "Omega 3 Capsules with Fish oil - 1000mg Triple Strength",
-      Dprice: 375,
-      img:
-        "https://cdn.shopify.com/s/files/1/1375/4957/products/Sunscreen-35-d-shape-100-1_375x.jpg?v=1612964500",
-      rate: "★ ★ ★ ★ ★",
-      role: "ADD TO CART",
-    },
-    {
-      
-      title:
-        "Cold Pressed Extra Virgin Coconut Oil - 400 Ml ",
-      Dprice: 277,
-      img:
-        "https://cdn.shopify.com/s/files/1/1375/4957/products/aloe-vera-face-wash-tube_375x.jpg?v=1626934537",
-      rate: "★ ★ ★ ★ ★",
-      role: "ADD TO CART",
-    },
-    {
-      
-      title:
-        "Probiotics 20 Billion CFU (14 Probiotic Strains) 500 Mg -",
-      Dprice: 277,
-      img:
-        "https://cdn.shopify.com/s/files/1/1375/4957/products/Aloe-FW-150-1_375x.jpg?v=1635146443",
-      rate: "★ ★ ★ ★ ★",
-      role: "ADD TO CART",
-    },
-  ];
+  var linkBest2="http://localhost:5000/summer";
+getData(linkBest2,appendDatasummer);
+ function appendDatasummer(data3){
   
-  data2.map(function (ndata) {
+  var c=document.querySelector("#p")
+  c.innerHTML=""
+  data3.map(function (ndata) {
     var cont1=document.getElementById("pcont")
   
       var divTw = document.createElement("div");
@@ -269,51 +175,14 @@ function addTocart(ndata){
     Button4.setAttribute("id","Showmore")
      Button4.innerHTML="SHOWMORE"
      document.querySelector("#m").append(Button4)
+  }
 // *****************Body Cupid Range
-var data = [
-  {
-   
-    title:
-      "Cherrylicious Body Polish By Body Cupid - 200 Ml",
-    Dprice: 429,
-    img:
-      "https://cdn.shopify.com/s/files/1/1375/4957/products/Cherrybodypolish1_375x.jpg?v=1637660566",
-    rate: "★ ★ ★ ★ ★",
-    role: "ADD TO CART",
-  },
-  {
-  
-    title:
-      "Nargis Body Mist By Body Cupid - 100 Ml",
-    Dprice: 375,
-    img:
-      "https://cdn.shopify.com/s/files/1/1375/4957/products/Nargisbodymist1001_375x.jpg?v=1637664157",
-    rate: "★ ★ ★ ★ ★",
-    role: "ADD TO CART",
-  },
-  {
-    
-    title:
-      "Vitamin C Brightening Foaming Face Wash (With Built-In-Brush) By Body ",
-    Dprice: 277,
-    img:
-      "https://cdn.shopify.com/s/files/1/1375/4957/products/VitCFW1_375x.jpg?v=1638884779",
-    rate: "★ ★ ★ ★ ★",
-    role: "ADD TO CART",
-  },
-  {
-    
-    title:
-      "Lavender Body Mist By Body Cupid - 100 Ml",
-    Dprice: 277,
-    img:
-      "https://cdn.shopify.com/s/files/1/1375/4957/products/Lavender1_375x.jpg?v=1638950790",
-    rate: "★ ★ ★ ★ ★",
-    role: "ADD TO CART",
-  },
-];
-
-data.map(function (ndata) {
+var linkBest3="http://localhost:5000/body";
+getData(linkBest3,appendDatabody);
+function appendDatabody(data4){
+  var d=document.querySelector("#t")
+  d.innerHTML=""
+data4.map(function (ndata) {
   var cont1=document.getElementById("t")
 
     var divTwt = document.createElement("div");
@@ -358,7 +227,7 @@ function addTocart(ndata){
   Button5.setAttribute("id","Showmore")
    Button5.innerHTML="SHOWMORE"
    document.querySelector("#u").append(Button5)
-
+}
 
 
 // ????????
