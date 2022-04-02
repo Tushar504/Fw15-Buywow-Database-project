@@ -14,7 +14,6 @@
 <style>
     #contain {
         width: 88%;
-        border: ;
         margin: auto;
         display: flex;
         margin-bottom: 20px;
@@ -26,7 +25,6 @@
 
     #box {
         width: 88%;
-        border: ;
         margin: auto;
         display: flex;
         margin-bottom: 20px;
@@ -37,14 +35,12 @@
     }
 
     #title {
-        border: ;
         width: 280px;
         margin: 20px;
         margin-left: 70px;
     }
 
     #rupee {
-        border: ;
         padding: 40px;
         margin-left: 80px;
 
@@ -101,7 +97,7 @@
     }
 
     #contain2 {
-        border: ;
+        
         width: 88%;
         margin: auto;
         margin-top: 90px;
@@ -127,7 +123,7 @@
 
     #grand_total {
         width: 200px;
-        border: ;
+        
         font-size: large;
         margin-left: 23px;
         ;
@@ -187,11 +183,50 @@
 
 </html>
 <script>
-    let data = JSON.parse(localStorage.getItem("cart"))
+  const take = async () => {
+
+try {
+    let token=JSON.parse(localStorage.getItem("token"))
+              let res = await fetch("http://localhost:5000/cart", {
+          
+          
+                  headers : {
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${token}`
+                  },
+              });
+
+              let data = await res.json();
+              console.log(data);
+              if(data.message){
+                   window.location.href = "sigin.html"
+                  alert("login required")
+                   
+              }
+              else{
+                  takeit(data)
+                
+
+               let res = data.reduce(function(sum,element){
+                    
+                     return sum+(element.Dprice*element.q)
+                  },0)
+               
+               document.getElementById("put").innerHTML = `<b>GRAND TOTAL: ₹${res}</b>` ;  
+               var total = localStorage.setItem("total",JSON.stringify(res))
+              }
+              
+} catch (error) {
+    console.log(error);
+}
+}
+
+take()
     let grand_total = 0;
-    console.log(data);
+    // console.log(data);
+    function takeit(data){
     data.map(function (ele, index) {
-        var count = 1;
+       
         let div = document.createElement("div");
         div.id = "box";
 
@@ -215,78 +250,116 @@
         let min = document.createElement("button");
         min.innerHTML = "-";
         min.id = "con"
-        min.addEventListener("click", function () {
-            count--;
-            cur.innerHTML = count
-            minus(ele, price2, count)
+
+
+
+
+        min.addEventListener("click",async function () {
+            try {
+
+              let up = ele.q-1
+              
+              if(up>0){
+
+                 let data = {
+                   q:up
+               }
+              
+           
+
+               data = JSON.stringify(data)
+               let res = await fetch(`http://localhost:5000/cart/${ele._id}`,{
+                   method:"PATCH",
+                   body:data,
+
+                   headers : {
+                    "Content-Type": "application/json",
+                },
+               })
+
+               window.location.href = "cart.html"
+ 
+              }
+               
+           } catch (error) {
+               console.log(error)
+           }
         })
 
         let cur = document.createElement("button");
-        cur.innerHTML = count;
-        cur.id = "con"
+        cur.innerHTML = ele.q;
+        
+
         let add = document.createElement("button");
         add.innerHTML = "+";
-        add.id = "con"
-        add.addEventListener("click", function () {
-            count++;
-            cur.innerHTML = count
-            mul(ele, price2, count)
+        add.id = "con"      
+        add.addEventListener("click", async function () {
+           try {
+
+            let up = ele.q+1
+               let data = {
+                   q:up
+               }
+              
+               data = JSON.stringify(data)
+               let res = await fetch(`http://localhost:5000/cart/${ele._id}`,{
+                   method:"PATCH",
+                   body:data,
+
+                   headers : {
+                    "Content-Type": "application/json",
+                },
+               })
+            
+               window.location.href = "cart.html"
+           } catch (error) {
+            console.log(error)
+               
+           }
         });
 
         let price2 = document.createElement("price");
-        price2.innerHTML = ele.Dprice
+        price2.innerHTML = ele.Dprice*ele.q
         price2.id = "total"
 
         let img2 = document.createElement("img");
         img2.src = "https://cdn-icons-png.flaticon.com/512/3096/3096673.png";
 
         img2.id = "dust";
-        img2.addEventListener("click", () => {
-            remove(index);
+        img2.addEventListener("click", () => { 
+            console.log(index)
+            remove(ele);
+           
         })
 
         divsee.append(min, cur, add)
         div.append(img, title, price, divsee, price2, img2)
         document.querySelector("#container").append(div)
         grand_total += ele.Dprice
-        function remove(index) {
-            data.splice(index, 1);
-            localStorage.setItem("cart", JSON.stringify(data));
-            window.location.href = "cart.html"
+
+
+
+       async function remove(ele) {
+           try {
+               let res = await fetch(`http://localhost:5000/cart/${ele._id}`,{
+                   method:"DELETE",
+
+               });
+               window.location.href = "cart.html"
+
+           } catch (error) {
+               
+           }
+            // data.splice(index, 1);
+            // localStorage.setItem("cart", JSON.stringify(data));
+            // window.location.href = "cart.html"
         }
     })
-
+    }
    
 
-    var g;
-
-    let mul = (data, price2, count) => {
-        let j = data.Dprice-grand_total;
-        ;
-        let ori = data.Dprice*count;
-        ;
-        price2.innerHTML = ori;
-        g = ori
-        var k = data.Dprice+ori+100
-        put.innerHTML = `<b>GRAND TOTAL: ₹${k}</b>`
-        var total = localStorage.setItem("total",JSON.stringify(k))
-    }
-
-    
-    let minus = (data, price2, count) => {
-        var l = price2.innerHTML
-        
-
-        let ori = (l -data.Dprice);
-        let o = Number(l)+100 
-        put.innerHTML = `<b>GRAND TOTAL: ₹${o}</b>`
-        price2.innerHTML = Math.floor(ori)
-        console.log(Math.floor(ori))
-            ; var total = localStorage.setItem("total",JSON.stringify(o))
-    }
-
-    let put = document.querySelector("#put");
-    put.innerHTML = `<b>GRAND TOTAL: ₹${grand_total}</b>`;
+   
+  
 </script>
 <script src="https://kit.fontawesome.com/b4ce217570.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="scripts/navbar.js"></script>
