@@ -6,6 +6,8 @@ const { body, validationResult } = require("express-validator");
 const cartController = require("./controllers/cart.controller");
 
 const bath_body = require("./controllers/bath_body_controller");
+const search_result = require("./controllers/searchcontroller");
+
 const hair_shampoo = require("./controllers/hair_shampoo_controller");
 const mother_child = require("./controllers//mother_child_controller");
 const skin_face_wash = require("./controllers/skin_face_wash_controller");
@@ -19,6 +21,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/bath_body", bath_body);
+app.use("/search", search_result);
 app.use("/hair_shampoo", hair_shampoo);
 app.use("/mother_child", mother_child);
 app.use("/skin_face_wash", skin_face_wash);

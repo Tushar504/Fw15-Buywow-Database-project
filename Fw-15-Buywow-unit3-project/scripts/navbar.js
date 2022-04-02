@@ -39,12 +39,11 @@
 		 var timerId;
 	 
 		 async function searchMovies(name) {
-		   
-		 
+
 		   let response = await fetch(`http://localhost:5000/search/${name}`);
 		 
 		   let data = await response.json();
-		   console.log({"data":data})
+		//    console.log({"data":data})
 		   return data;
 		 }
 		 
@@ -91,7 +90,7 @@
 		   document.getElementById('search_item').style.visibility = "visible";
 		 
 		   let m = await searchMovies(name);
-		   // console.log({"m":m.})
+		//    console.log({"m":m})
 		 
 		   appendMovies(m);
 		 }
