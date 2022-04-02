@@ -8,7 +8,7 @@ router.get("/",authenticate,async(req,res) => {
 
     try {
         const cart = await Cart.find({user:req.user}).lean().exec();
-        console.log(cart);
+       
         res.status(201).send(cart);
     } catch (error) {
         res.status(501).send({error:error.message});
@@ -45,7 +45,7 @@ router.post("/addtocart",authenticate,async(req,res)=>{
             Dprice:req.body.Dprice,
             user:req.user
         })
-        console.log(req.user)
+      
         return res.send(cart)
     } 
     catch (error) {
