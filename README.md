@@ -14,7 +14,7 @@ _To start with the Project run the following command in "backend" folder_
 
 - **[Sachin Singh](https://github.com/Sachin13579)**
 - **[Tushar Ahire](https://github.com/Tushar504)**
-- **[Akaash Vishwakarma](https://github.com/)**
+- **[Aakash Vishwakarma](https://github.com/)**
 - **[Suraj Ahirwar](https://github.com/AakaShVSh)**
 
 ---
