@@ -70,6 +70,6 @@ _To start with the Project run the following command in "backend" folder_
 
 https://medium.com/@tushar_98/buywow-in-clone-da45520dcc41
 
-###**Team Presentation Link**
+### Team Presentation Link
 
 https://drive.google.com/file/d/1P3oEefPqeesgFDTr1hNMizevQJAaKyFx/view?usp=sharing
