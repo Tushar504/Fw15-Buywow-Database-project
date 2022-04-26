@@ -4,7 +4,7 @@
 
 _To start with the Project run the following command in "backend" folder_
 
-> > ⌘ **npm start**
+> > ⌘ **npm run server**
 
 > After the go to your browser and type `http://localhost:5000/home` and you are ready to run and explore our project.
 
