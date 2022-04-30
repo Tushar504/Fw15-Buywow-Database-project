@@ -2,7 +2,7 @@
 
 ### Project Description
 
-_To start with the Project run the following command in "backend" folder_
+_To start with the Project run the following command in "Backend" folder_
 
 > > ⌘ **npm run server**
 
