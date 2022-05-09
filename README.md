@@ -73,3 +73,6 @@ https://medium.com/@tushar_98/buywow-in-clone-da45520dcc41
 ### Team Presentation Link
 
 https://drive.google.com/file/d/1P3oEefPqeesgFDTr1hNMizevQJAaKyFx/view?usp=sharing
+
+**###Deploymemt Link**
+https://fluffy-mermaid-1fa62f.netlify.app/index.html
